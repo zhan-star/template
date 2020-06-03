@@ -7,10 +7,10 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="template/css/ionicons.min.css">
+    <link rel="stylesheet" href="template/css/AdminLTE.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,7 @@
   <div class="login-box-body">
     <p class="login-box-msg"><?=$message;?></p>
 
-    <form action="../auth.php" class="login-box-msg" method="post">
+    <form action="auth.php" class="login-box-msg" method="post">
       <div class="form-group has-feedback">
         <input name ="login" type="text" class="form-control" placeholder="Логин">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
