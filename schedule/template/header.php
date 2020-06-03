@@ -89,7 +89,7 @@ desired effect
              
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs"><?php 
-              echo $_COOKIE['name'];
+              echo 'Здравствуйте, '.$_COOKIE['name']; 
               ?>
             </span>
             </a>
