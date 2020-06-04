@@ -31,7 +31,7 @@
   <div class="login-box-body">
     <p class="login-box-msg"><?=$message;?></p>
 
-    <form action="auth.php" class="login-box-msg" method="post">
+    <form action="../auth.php" class="login-box-msg" method="post">
       <div class="form-group has-feedback">
         <input name ="login" type="text" class="form-control" placeholder="Логин">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
