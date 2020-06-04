@@ -11,11 +11,14 @@
  *
  * @author Жан
  */
-abstract class Teacher extends Table{
+ class Teacher extends Table{
     //put your code here
     public $user_id=0;
     public $otdel_id='';
     public function validate(){
-        return false;
+        if (!empty($this->otdel_id)) {
+            return true;
+            }
+            return false;
     }
 }
