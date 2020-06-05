@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of TeacherMap
+ * 
  *
  * @author Жан
  */

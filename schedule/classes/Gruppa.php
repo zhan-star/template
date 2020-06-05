@@ -11,7 +11,7 @@
  *
  * @author Жан
  */
-abstract class Gruppa extends Table{
+class Gruppa extends Table{
     //put your code here
     public $gruppa_id = 0;
     public $name='';
@@ -19,6 +19,13 @@ abstract class Gruppa extends Table{
     public $date_begin ='';
     public $date_end=0;
     public function validate(){
+        if (!empty($this->name) &&
+        !empty($this->special_id)&&
+        !empty($this->date_begin)&&
+        !empty($this->date_end)) {
+        return true;
+        }
         return false;
     }
+    
 }

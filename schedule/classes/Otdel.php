@@ -11,12 +11,18 @@
  *
  * @author Жан
  */
-abstract class Otdel extends Table{
+
+class Otdel extends Table
+{
     public $otdel_id = 0;
     public $name = '';
     public $active = 1;
-    //put your code here
-    public function validate(){
+    public function validate()
+    {
+        if (!empty($this->name) && !empty($this->active)) {
+            return true;
+        }
         return false;
+
     }
 }

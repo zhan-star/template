@@ -11,12 +11,16 @@
  *
  * @author Жан
  */
-abstract class Classroom extends Table{
-    //put your code here
-    public $classroom_id=0;
-    public $name='';
-    public $active=1;
-    public function validate(){
-        return false;
+
+class Classroom extends Table
+{
+    public $classroom_id = 0;
+    public $name = '';
+    public $active = 1;
+    public function validate()
+    {
+        if (!empty($this->name) && !empty($this->active)) {
+            return true;
+        }
     }
 }
