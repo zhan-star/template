@@ -70,6 +70,7 @@ class TeacherMap extends BaseMap{
             $id");
             return $res->fetch(PDO::FETCH_OBJ);
             }
-            return false;}
+            return false;
+    }
 }
 

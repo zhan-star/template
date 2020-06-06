@@ -71,5 +71,9 @@ class ClassroomMap extends BaseMap
         $res = $this->db->query("SELECT COUNT(*) AS cnt FROM classroom");
         return $res->fetch(PDO::FETCH_OBJ)->cnt;
     }
+    public function arrClassrooms(){
+        $res = $this->db->query("SELECT classroom_id AS id, name AS value FROM classroom WHERE active=1");
+        return $res->fetchAll(PDO::FETCH_ASSOC);
+    }
     
 }
