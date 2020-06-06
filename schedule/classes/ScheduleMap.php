@@ -86,6 +86,51 @@ class ScheduleMap extends BaseMap{
         AND schedule.day_id=$dayId ORDER BY gruppa.name");
         return $res->fetchAll(PDO::FETCH_OBJ);
     }
+    public function findByStudentId($id = null)
+    {
+        $days = $this->findDays();
+        $gruppa = (new GruppaMap())->findById((new StudentMap())->findById($id)->gruppa_id);
+        $result = ['gruppaName' => $gruppa->name];
+
+        foreach ($days as $day) {
+            $arrDay = [];
+            $arrDay['id'] = $day->day_id;
+            $arrDay['name'] = $day->name;
+            $arrDay['schedule'] = $this->findByGruppaId($gruppa->gruppa_id, $day->day_id);
+            $result['schedules'][] = $arrDay;
+        }
+        return $result;
+    }
+
+    public function findByGruppaId($gruppaId, $dayId)
+    {
+        $res = $this->db->query("
+            SELECT
+                sc.schedule_id,
+                ln.name AS lesson_num,
+                su.name AS subject,
+                c.name AS classroom,
+                CONCAT(u.lastname, ' ', u.firstname, ' ', IfNull(u.patronymic, '')) AS fio
+            FROM lesson_plan AS lp
+            INNER JOIN schedule AS sc
+                ON lp.lesson_plan_id = sc.lesson_plan_id
+            INNER JOIN teacher
+                ON lp.user_id = teacher.user_id
+            INNER JOIN user AS u
+                ON teacher.user_id = u.user_id
+            INNER JOIN subject AS su
+                ON lp.subject_id = su.subject_id
+            INNER JOIN lesson_num AS ln
+                ON sc.lesson_num_id = ln.lesson_num_id
+            INNER JOIN classroom AS c
+                ON sc.classroom_id = c.classroom_id
+            WHERE
+                lp.gruppa_id = $gruppaId AND
+                sc.day_id = $dayId
+            ORDER BY sc.lesson_num_id
+        ");
+        return $res->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function findByGruppasDayTeacher($teacherId, $dayId, $gruppaId){
         $res = $this->db->query("SELECT
         schedule.schedule_id,lesson_num.name AS

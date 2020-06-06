@@ -59,13 +59,13 @@ as $gruppa) : ?>
 
 <?php else: ?>
 <tr>
-<td colspan="4">Отутствует расписание на этот день</td>
+<td colspan="4">Отсутствует расписание на этот день</td>
 </tr>
 <?php endif; ?>
 <?php endforeach;?>
 </table>
 <?php else: ?>
-<p>Расписание отутствует</p>
+<p>Расписание отсутствует</p>
 <?php endif; ?>
 </div>
 </div>
