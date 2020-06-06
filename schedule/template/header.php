@@ -100,10 +100,10 @@ desired effect
 
                 <p>
                 <?php 
-              echo $_COOKIE['name'];
-              ?> - <?php 
-              echo $_COOKIE['roleName'];
-              ?>
+                  echo $_COOKIE['name'];
+                  ?> - <?php 
+                  echo $_COOKIE['roleName'];
+                  ?>
                   
                 </p>
               </li>
@@ -117,8 +117,7 @@ desired effect
                 <div class="pull-right">
                 <form method="POST">
 
-<button type="submit" class="btn btn-default btn-
-flat" name="out">Выход</button>
+<button type="submit" class="btn btn-default btn-flat" name="out">Выход</button>
 
 </form>
                 </div>
@@ -143,7 +142,7 @@ flat" name="out">Выход</button>
  
 
       <!-- Sidebar Menu -->
-      <?php require_once 'template/menu.php'; ?>
+      <?php require_once 'menu.php'; ?>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

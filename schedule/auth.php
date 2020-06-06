@@ -25,4 +25,4 @@ elseif (isset($_POST['login']) &&isset($_POST['password'])) {
         $message = '<span style="color:red;">Некорректен логин или пароль</span>';
     }
 }
-require_once 'template/login.php';
+require_once 'login.php';
